@@ -35,6 +35,10 @@ public class Config
             .comment("Block Break Volume (caused by mod).")
             .defineInRange("blockBreakVolume",1,0,Double.MAX_VALUE);
 
+    private static final ForgeConfigSpec.IntValue FALLING_BLOCK_MAX_TIME = BUILDER
+            .comment("Falling Block Max Time (in ticks).")
+            .defineInRange("fallingBlockMaxTime",100, 40, Integer.MAX_VALUE);
+
     private static final ForgeConfigSpec.IntValue SUPPORT_LENGTH_MAX = BUILDER
             .comment("Support Strength Max. This value will be used by anything with a default hardness equal to or greater than 7 (iron blocks, obsidian, etc...).")
             .defineInRange("supportLengthMax", 10, 1, Integer.MAX_VALUE);
@@ -98,6 +102,7 @@ public class Config
     public static Integer dmgDist;
     public static Integer dmgMax;
     public static Integer maxFallingBlockEntity;
+    public static Integer fallingBlockMaxTime;
     public static Integer supportSearchIter;
     public static Double fallingBlockBreakFactor;
     public static Double fallingBlockItemDropChance;
@@ -133,6 +138,7 @@ public class Config
         dmgDist = DMG_DIST.get();
         dmgMax = DMG_MAX.get();
         maxFallingBlockEntity = MAX_FALLING_BLOCK.get();
+        fallingBlockMaxTime = FALLING_BLOCK_MAX_TIME.get();
         supportSearchIter = SUPPORT_SEARCH_ITER.get();
         fallingBlockBreakFactor = FALLING_BLOCK_BREAK_FACTOR.get();
         fallingBlockItemDropChance = FALLING_BLOCK_ITEM_DROP_CHANCE.get();
